@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>{{title}}</title>
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <script src="{{ url_for('static', filename='dist/js/includes/jquery.min.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/main.min.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='dist/img/favicon.png') }}" type="image/x-icon" />
+</head>
+<body class="{{template}}">
+  <div class="container">
+	  {{body}}
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+body,
+html {
+  font-family: 'Lato';
+  background: #e7ecf7 !important;
+  padding: 0;
+  height: 100% !important;
+}
+.container {
+  margin: 90px 30px;
+  color: #182635;
+}
+#_dash-app-content {
+  max-width: 95% !important;
+  margin: 30px auto !important;
+  overflow: hidden;
+}
+nav {
+  background: #4ab3bf !important;
+  color: white;
+  padding: 20px 30px !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-family: Lato, sans-serif;
+  box-shadow: 0 0 5px #658ba2;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 30px;
+  transition: all 0.3s ease-out;
+}
+nav a:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+nav a i {
+  margin-right: 5px;
+}
+.dash-spreadsheet-container {
+  margin: 30px auto !important;
+  overflow: hidden;
+  box-shadow: 0 0 5px #bcceef;
+  font-family: 'Lato', sans-serif;
+  max-width: 99%;
+}
+.dash-spreadsheet-container * {
+  font-family: Lato;
+  box-shadow: none !important;
+}
+.dash-spreadsheet-container th,
+.dash-spreadsheet-container tr {
+  max-width: 200px;
+  box-shadow: none !important;
+}
+.dash-spreadsheet-container th {
+  background: #4ab3bf !important;
+  color: white;
+  padding: 8px 10px !important;
+  border-right: 1px solid #7eccd4 !important;
+}
+.dash-spreadsheet-container th .sort {
+  color: #2b4249 !important;
+  transition: all 0.3s ease-out;
+}
+.dash-spreadsheet-container th .sort:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  text-decoration: none;
+}
+.dash-spreadsheet-container th > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.dash-spreadsheet-container th > div span:last-of-type {
+  font-size: 12px;
+}
+.dash-spreadsheet-container td {
+  padding: 15px 10px !important;
+  text-align: left !important;
+}
+.dash-spreadsheet-container td .dash-cell-value {
+  display: inline !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 172px;
+  text-align: left;
+  font-size: 1em;
+  overflow: hidden;
+}
+.dash-spreadsheet-container tr:nth-child(even) {
+  background: #f5f8fc !important;
+}
+table thead tr {
+  background: #646483 !important;
+  color: white !important;
+  font-weight: 100 !important;
+  text-transform: uppercase !important;
+  font-size: 0.8em !important;
+}
+table thead tr th {
+  border-radius: 0 !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+  padding: 10px 5px !important;
+}
+table tbody {
+  box-shadow: 0 0 7px #bdbdd2 !important;
+}
+table tbody tr {
+  border: 0 !important;
+}
+table tbody tr:nth-child(even) {
+  background: #e7eefa !important;
+}
+table tbody tr td {
+  max-width: 150px !important;
+  overflow: hidden !important;
+  padding: 15px 10px !important;
+  font-size: 0.73em !important;
+  line-height: 1.25 !important;
+  border-radius: 0 !important;
+  text-align: center !important;
+}

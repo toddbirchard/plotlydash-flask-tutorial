@@ -1,0 +1,131 @@
+body,
+html {
+  font-family: 'Lato';
+  background: #e7ecf7 !important;
+  padding: 0;
+  height: 100% !important;
+}
+
+nav {
+  background: #4ab3bf !important;
+  color: white;
+  padding: 20px !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-family: Lato, sans-serif;
+  box-shadow: 0 0 5px #658ba2;
+
+  a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: all .3s ease-out;
+
+    &:hover {
+      opacity: .7;
+      cursor: pointer;
+    }
+  }
+}
+
+.dash-spreadsheet-container {
+  max-width: 95% !important;
+  margin: 30px auto !important;
+  overflow: hidden;
+  box-shadow: 0 0 5px #bcceef;
+  font-family: 'Lato', sans-serif;
+
+  * {
+    font-family: Lato;
+    box-shadow: none !important;
+  }
+
+  th,
+  tr {
+    max-width: 200px;
+    box-shadow: none !important;
+  }
+
+  th {
+    background: #4ab3bf !important;
+    color: white;
+    padding: 0 10px !important;
+
+    .sort {
+      color: #2b4249 !important;
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+
+      span:last-of-type {
+        font-size: 12px;
+      }
+    }
+  }
+
+  td {
+    padding: 15px 10px !important;
+    text-align: left !important;
+
+    .dash-cell-value {
+      display: inline !important;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 172px;
+      text-align: left;
+      font-size: 1em;
+      overflow: hidden;
+    }
+  }
+
+  tr:nth-child(even) {
+    background: #f5f8fc !important;
+  }
+}
+
+table {
+  thead {
+    tr {
+      background: #646483 !important;
+      color: white !important;
+      font-weight: 100 !important;
+      text-transform: uppercase !important;
+      font-size: 0.8em !important;
+
+      th {
+        border-radius: 0 !important;
+        text-align: center !important;
+        line-height: 1.2 !important;
+        padding: 10px 5px !important;
+      }
+    }
+  }
+
+  tbody {
+    box-shadow: 0 0 7px #bdbdd2 !important;
+
+    tr {
+      border: 0 !important;
+
+      &:nth-child(even) {
+        background: #e7eefa !important;
+      }
+
+      td {
+        max-width: 150px !important;
+        overflow: hidden !important;
+        padding: 15px 10px !important;
+        font-size: 0.73em !important;
+        line-height: 1.25 !important;
+        border-radius: 0 !important;
+        text-align: center !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.env
+.DS_Store
+__pycache__
+.ropeproject
+.idea
+data
+.webassets-cache

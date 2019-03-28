@@ -1,0 +1,27 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+python-dotenv="*"
+
+[packages]
+flask="*"
+flask_assets="*"
+flask_redis="*"
+flask_sqlalchemy="*"
+pathlib="*"
+dash="*"
+dash_core_components="*"
+dash_html_components="*"
+dash-renderer="*"
+pandas="*"
+lesscpy="*"
+psycopg2-binary="*"
+cssmin="*"
+jsmin="*"
+
+
+[requires]
+python_version = "3.7"
