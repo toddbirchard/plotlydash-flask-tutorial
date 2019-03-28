@@ -10,13 +10,15 @@ p = Path('.')
 
 
 def Add_Dash(server):
-    """Populates page with previews of datasets."""
-    external_stylesheets = ['https://hackers.nyc3.cdn.digitaloceanspaces.com/css/plotly-flask-tutorial8.css',
+    """Plot.ly Dash view which populates the screen with loaded DataFrames."""
+    external_stylesheets = ['https://hackers.nyc3.cdn.digitaloceanspaces.com/css/plotly-flask-tutorial.css',
                             'https://fonts.googleapis.com/css?family=Lato',
                             'https://use.fontawesome.com/releases/v5.8.1/css/all.css']
     dash_app = Dash(server=server,
-                    url_base_pathname='/plotly_dash_views/',
-                    external_stylesheets=external_stylesheets)
+                    external_stylesheets=external_stylesheets,
+                    routes_pathname_prefix='/dash_view/')
+
+    # Override the underlying HTML template
     dash_app.index_string = '''<!DOCTYPE html>
         <html>
             <head>
@@ -28,7 +30,7 @@ def Add_Dash(server):
             <body>
                 <nav>
                   <a href="/"><i class="fas fa-home"></i> Home</a>
-                  <a href="/plotly_dash_views/"><i class="fas fa-chart-line"></i> Embdedded Plotly Dash</a>
+                  <a href="/dash_view/"><i class="fas fa-chart-line"></i> Embdedded Plotly Dash</a>
                 </nav>
                 {%app_entry%}
                 <footer>
@@ -39,8 +41,7 @@ def Add_Dash(server):
             </body>
         </html>'''
 
-
-    # Create layout
+    # Create Dash Layout comprised of Data Tables
     dash_app.layout = html.Div(
         children=get_datasets(),
         id='flex-container'
@@ -50,8 +51,8 @@ def Add_Dash(server):
 
 
 def get_datasets():
-    """Gets all CSVs in /data directory."""
-    data_filepath = list(p.glob('plotly_flask_tutorial/plotly_dash_views/data/*.csv'))
+    """Returns previews of all CSVs saved in /data directory."""
+    data_filepath = list(p.glob('plotly_flask_tutorial/data/*.csv'))
     arr = ['This is an example Plot.ly Dash App.']
     for index, csv in enumerate(data_filepath):
         print(PurePath(csv))
