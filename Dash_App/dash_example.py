@@ -11,7 +11,7 @@ p = Path('.')
 
 def Add_Dash(server):
     """Create a Dash app."""
-    external_stylesheets = ['/static/dist/css/plotly-flask-tutorial.css',
+    external_stylesheets = ['/static/dist/css/styles.css',
                             'https://fonts.googleapis.com/css?family=Lato',
                             'https://use.fontawesome.com/releases/v5.8.1/css/all.css']
     external_scripts = ['/static/dist/js/includes/jquery.min.js',

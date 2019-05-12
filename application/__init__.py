@@ -11,8 +11,8 @@ def create_app():
 
         # Construct the data set
         from . import routes
-        from Dash_App import dash_view
-        app = dash_view.Add_Dash(app)
+        from Dash_App import dash_example
+        app = dash_example.Add_Dash(app)
         app.register_blueprint(routes.main_bp)
 
         return app
