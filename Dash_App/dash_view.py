@@ -10,13 +10,16 @@ p = Path('.')
 
 
 def Add_Dash(server):
-    """Plot.ly Dash view which populates the screen with loaded DataFrames."""
-    external_stylesheets = ['https://hackers.nyc3.cdn.digitaloceanspaces.com/css/plotly-flask-tutorial.css',
+    """Create a Dash app."""
+    external_stylesheets = ['/static/dist/css/plotly-flask-tutorial.css',
                             'https://fonts.googleapis.com/css?family=Lato',
                             'https://use.fontawesome.com/releases/v5.8.1/css/all.css']
+    external_scripts = ['/static/dist/js/includes/jquery.min.js',
+                        '/static/dist/js/main.js']
     dash_app = Dash(server=server,
                     external_stylesheets=external_stylesheets,
-                    routes_pathname_prefix='/dash_view/')
+                    external_scripts=external_scripts,
+                    routes_pathname_prefix='/dashapp/')
 
     # Override the underlying HTML template
     dash_app.index_string = '''<!DOCTYPE html>
@@ -30,7 +33,7 @@ def Add_Dash(server):
             <body>
                 <nav>
                   <a href="/"><i class="fas fa-home"></i> Home</a>
-                  <a href="/dash_view/"><i class="fas fa-chart-line"></i> Embdedded Plotly Dash</a>
+                  <a href="/dashapp/"><i class="fas fa-chart-line"></i> Embdedded Plotly Dash</a>
                 </nav>
                 {%app_entry%}
                 <footer>
@@ -44,15 +47,15 @@ def Add_Dash(server):
     # Create Dash Layout comprised of Data Tables
     dash_app.layout = html.Div(
         children=get_datasets(),
-        id='flex-container'
+        id='dash-container'
       )
 
     return dash_app.server
 
 
 def get_datasets():
-    """Returns previews of all CSVs saved in /data directory."""
-    data_filepath = list(p.glob('plotly_flask_tutorial/data/*.csv'))
+    """Return previews of all CSVs saved in /data directory."""
+    data_filepath = list(p.glob('data/*.csv'))
     arr = ['This is an example Plot.ly Dash App.']
     for index, csv in enumerate(data_filepath):
         print(PurePath(csv))

@@ -5,6 +5,9 @@ verify_ssl = true
 
 [dev-packages]
 python-dotenv="*"
+lesscpy="*"
+cssmin="*"
+jsmin="*"
 
 [packages]
 flask="*"
@@ -15,10 +18,6 @@ dash_core_components="*"
 dash_html_components="*"
 dash-renderer="*"
 pandas="*"
-lesscpy="*"
-cssmin="*"
-jsmin="*"
-
 
 [requires]
 python_version = "3.7"
