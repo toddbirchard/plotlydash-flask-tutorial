@@ -9,10 +9,12 @@ def create_app():
 
     with app.app_context():
 
-        # Construct the data set
+        # Import main Blueprint
         from . import routes
-        from Dash_App import dash_example
-        app = dash_example.Add_Dash(app)
         app.register_blueprint(routes.main_bp)
+
+        # Import Dash application
+        from .dash_application import dash_example
+        app = dash_example.Add_Dash(app)
 
         return app
