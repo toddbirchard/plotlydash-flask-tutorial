@@ -1,12 +1,11 @@
+"""Create a Dash app within a Flask app."""
 import glob
-from pathlib import Path, PurePath
+from pathlib import Path
 from dash import Dash
 import dash_table
-import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
-
-p = Path('.')
+from .layout import html_layout
 
 
 def Add_Dash(server):
@@ -22,27 +21,7 @@ def Add_Dash(server):
                     routes_pathname_prefix='/dashapp/')
 
     # Override the underlying HTML template
-    dash_app.index_string = '''<!DOCTYPE html>
-        <html>
-            <head>
-                {%metas%}
-                <title>{%title%}</title>
-                {%favicon%}
-                {%css%}
-            </head>
-            <body>
-                <nav>
-                  <a href="/"><i class="fas fa-home"></i> Home</a>
-                  <a href="/dashapp/"><i class="fas fa-chart-line"></i> Embdedded Plotly Dash</a>
-                </nav>
-                {%app_entry%}
-                <footer>
-                    {%config%}
-                    {%scripts%}
-                    {%renderer%}
-                </footer>
-            </body>
-        </html>'''
+    dash_app.index_string = html_layout
 
     # Create Dash Layout comprised of Data Tables
     dash_app.layout = html.Div(
@@ -55,10 +34,10 @@ def Add_Dash(server):
 
 def get_datasets():
     """Return previews of all CSVs saved in /data directory."""
+    p = Path('.')
     data_filepath = list(p.glob('data/*.csv'))
     arr = ['This is an example Plot.ly Dash App.']
     for index, csv in enumerate(data_filepath):
-        print(PurePath(csv))
         df = pd.read_csv(data_filepath[index]).head(10)
         table_preview = dash_table.DataTable(
             id='table_' + str(index),

@@ -30,4 +30,4 @@ def home():
     return render_template('index.html',
                            title='Plotly Flask Tutorial.',
                            template='home-template',
-                           body="This is an example homepage, served with Flask.")
+                           body="This is an example homepage served with Flask.")
