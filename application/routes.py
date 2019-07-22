@@ -1,5 +1,4 @@
 """Routes for core Flask app."""
-import os
 from flask import Blueprint, render_template
 from flask_assets import Environment, Bundle
 from flask import current_app as app
