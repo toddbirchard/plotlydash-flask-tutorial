@@ -4,20 +4,20 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-python-dotenv="*"
-lesscpy="*"
-cssmin="*"
-jsmin="*"
+python-dotenv = "*"
+lesscpy = "*"
+cssmin = "*"
+jsmin = "*"
 
 [packages]
-flask="*"
-flask_assets="*"
-pathlib="*"
-dash="*"
-dash_core_components="*"
-dash_html_components="*"
-dash-renderer="*"
-pandas="*"
+Flask = "*"
+Flask_assets = "*"
+Pathlib = "*"
+Dash = "*"
+Dash_core_components = "*"
+Dash_html_components = "*"
+Dash-renderer = "*"
+Pandas = "*"
 
 [requires]
 python_version = "3.7"

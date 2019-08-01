@@ -18,4 +18,8 @@ def create_app():
         from .dash_application import dash_example
         app = dash_example.Add_Dash(app)
 
+        # Compile assets
+        from .assets import compile_assets
+        compile_assets(app)
+
         return app

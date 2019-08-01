@@ -1,5 +1,4 @@
 """Create a Dash app within a Flask app."""
-import glob
 from pathlib import Path
 from dash import Dash
 import dash_table
@@ -43,7 +42,8 @@ def get_datasets():
             id='table_' + str(index),
             columns=[{"name": i, "id": i} for i in df.columns],
             data=df.to_dict("rows"),
-            sorting=True,
+            sort_action="native",
+            sort_mode='single'
         )
         arr.append(table_preview)
     return arr
