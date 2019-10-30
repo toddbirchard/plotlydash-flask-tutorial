@@ -1,5 +1,4 @@
 """A setuptools based setup module."""
-
 from os import path
 from setuptools import setup, find_packages
 from io import open
@@ -22,33 +21,23 @@ setup(
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-
     keywords='Plotly Dash Flask',
     packages=find_packages(),
     install_requires=['flask',
-                      'flask_redis',
-                      'flask_sqlalchemy',
+                      'flask_assets',
                       'pandas',
-                      'psycopg2-binary',
                       'dash',
                       'dash_core_components',
                       'dash_html_components',
+                      'dash_table',
+                      'dash_renderer',
                       'pathlib'],
-    extras_require={
-        'dev': ['check-manifest'],
-        'test': ['coverage'],
-        'env': ['python-dotenv']
-    },
     entry_points={
         'console_scripts': [
-            '__main__',
+            'run = wsgi:main',
         ],
     },
     project_urls={

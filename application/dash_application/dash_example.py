@@ -1,6 +1,6 @@
 """Create a Dash app within a Flask app."""
 from pathlib import Path
-from dash import Dash
+import dash
 import dash_table
 import dash_html_components as html
 import pandas as pd
@@ -14,10 +14,10 @@ def Add_Dash(server):
                             'https://use.fontawesome.com/releases/v5.8.1/css/all.css']
     external_scripts = ['/static/dist/js/includes/jquery.min.js',
                         '/static/dist/js/main.js']
-    dash_app = Dash(server=server,
-                    external_stylesheets=external_stylesheets,
-                    external_scripts=external_scripts,
-                    routes_pathname_prefix='/dashapp/')
+    dash_app = dash.Dash(server=server,
+                         external_stylesheets=external_stylesheets,
+                         external_scripts=external_scripts,
+                         routes_pathname_prefix='/dashapp/')
 
     # Override the underlying HTML template
     dash_app.index_string = html_layout

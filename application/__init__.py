@@ -11,15 +11,15 @@ def create_app():
     with app.app_context():
 
         # Import main Blueprint
-        from . import routes
+        from application import routes
         app.register_blueprint(routes.main_bp)
 
         # Import Dash application
-        from .dash_application import dash_example
-        app = dash_example.Add_Dash(app)
+        from application.dash_application.dash_example import Add_Dash
+        app = Add_Dash(app)
 
         # Compile assets
-        from .assets import compile_assets
+        from application.assets import compile_assets
         compile_assets(app)
 
         return app
