@@ -31,7 +31,7 @@ $ flask run
 Alternatively, try installing via `setup.py`:
 
 ```shell
-$ git clone https://github.com/hackersandslackers/django-intro-tutorial.git
+$ git clone https://github.com/toddbirchard/plotlydash-flask-tutorial.git
 $ cd plotlydash-flask-tutorial
 $ python3 setup.py install
 $ flask run
