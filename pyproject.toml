@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "Plotly Dash Flask Tutorial"
+version = "0.1.0"
+description = "Integrate Plotly Dash into your Flask applications."
+authors = ["Todd Birchard <toddbirchard@gmail.com>"]
+maintainers = ["Todd Birchard <toddbirchard@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://hackersandslackers.com/plotly-dash-with-flask/"
+repository = "https://github.com/toddbirchard/plotlydash-flask-tutorial/"
+documentation = "https://hackersandslackers.com/plotly-dash-with-flask/"
+keywords = ["Flask",
+            "Plotly",
+            "Plotly Dash",
+            "Data Science",
+            "Tutorial"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+flask = "*"
+flask_assets = "*"
+pathlib = "*"
+dash = "*"
+dash_Table = "*"
+dash_core_components = "*"
+dash_html_components = "*"
+dash-renderer = "*"
+pandas = "*"
+python-dotenv = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry.scripts]
+run = "wsgi:app"
+
+[tool.poetry.urls]
+issues = "https://github.com/toddbirchard/plotlydash-flask-tutorial/issues"

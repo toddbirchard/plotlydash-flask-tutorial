@@ -4,7 +4,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-python-dotenv = "*"
 lesscpy = "*"
 cssmin = "*"
 jsmin = "*"
@@ -19,6 +18,7 @@ Dash_core_components = "*"
 Dash_html_components = "*"
 Dash-renderer = "*"
 Pandas = "*"
+python-dotenv = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"

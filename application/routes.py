@@ -11,7 +11,7 @@ main_bp = Blueprint('main_bp', __name__,
 @main_bp.route('/')
 def home():
     """Landing page."""
-    return render_template('index.html',
-                           title='Plotly Flask Tutorial.',
+    return render_template('index.jinja2',
+                           title='Plotly Dash & Flask Tutorial',
                            template='home-template',
                            body="This is an example homepage served with Flask.")

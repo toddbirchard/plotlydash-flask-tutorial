@@ -35,7 +35,7 @@ def get_datasets():
     """Return previews of all CSVs saved in /data directory."""
     p = Path('.')
     data_filepath = list(p.glob('data/*.csv'))
-    arr = ['This is an example Plot.ly Dash App.']
+    arr = []
     for index, csv in enumerate(data_filepath):
         df = pd.read_csv(data_filepath[index]).head(10)
         table_preview = dash_table.DataTable(
