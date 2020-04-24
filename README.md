@@ -12,5 +12,31 @@
 [![GitHub Stars](https://img.shields.io/github/stars/toddbirchard/plotlydash-flask-tutorial.svg?style=flat-square&colorB=ebcb8b&colorA=4c566a)](https://github.com/toddbirchard/plotlydash-flask-tutorial/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/toddbirchard/plotlydash-flask-tutorial.svg?style=flat-square&colorA=4c566a&colorB=ebcb8b)](https://github.com/toddbirchard/plotlydash-flask-tutorial/network)
 
+![Plot Dash Tutorial](https://storage.googleapis.com/hackersandslackers-cdn/2018/12/Dash@2x.jpg)
 
 Source code for the accompanying tutorial found here: https://hackersandslackers.com/plotly-dash-with-flask/
+
+## Getting Started
+
+Installation is recommended with [Pipenv](https://pipenv-fork.readthedocs.io/en/latest/):
+
+```shell
+$ git clone https://github.com/toddbirchard/plotlydash-flask-tutorial.git
+$ cd plotlydash-flask-tutorial
+$ pipenv shell
+$ pipenv update
+$ flask run
+```
+
+Alternatively, try installing via `requirements.txt`:
+
+```shell
+$ git clone https://github.com/toddbirchard/plotlydash-flask-tutorial.git
+$ cd plotlydash-flask-tutorial
+$ python3 -m pip install -r requirements.txt
+$ flask run
+```
+
+-----
+
+**Hackers and Slackers** tutorials are free of charge. If you found this tutorial helpful, a [small donation](https://www.buymeacoffee.com/hackersslackers) would be greatly appreciated to keep us in business. All proceeds go towards coffee, and all coffee goes towards more content.

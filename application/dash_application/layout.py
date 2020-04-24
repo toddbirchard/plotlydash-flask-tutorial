@@ -6,11 +6,12 @@ html_layout = '''<!DOCTYPE html>
                             {%favicon%}
                             {%css%}
                         </head>
-                        <body>
+                        <body class="dash-template">
                             <header>
                               <div class="nav-wrapper">
-                                <a href="/" class="logo">
+                                <a href="/">
                                     <img src="/static/img/logo.png" class="logo" />
+                                    <h1>Plotly Dash Flask Tutorial</h1>
                                   </a>
                                 <nav>
                                   <a href="/dashapp/"><i class="fas fa-chart-line"></i> Embdedded Plotly Dash</a>
