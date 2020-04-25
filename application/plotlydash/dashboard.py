@@ -1,5 +1,4 @@
 """Create a Dash app within a Flask app."""
-from pathlib import Path
 import dash
 import dash_table
 import dash_html_components as html
@@ -34,27 +33,27 @@ def create_dashboard(server):
     # Create Dash Layout comprised of Data Tables
     dash_app.layout = html.Div(
         children=[dcc.Graph(
-        id='histogram-graph',
-        figure={
-            'data': [
-                {
-                    'x': df['complaint_type'],
-                    'text': df['complaint_type'],
-                    'customdata': df['unique_key'],
-                    'name': '311 Calls by region.',
-                    'type': 'histogram'
+            id='histogram-graph',
+            figure={
+                'data': [
+                    {
+                        'x': df['complaint_type'],
+                        'text': df['complaint_type'],
+                        'customdata': df['unique_key'],
+                        'name': '311 Calls by region.',
+                        'type': 'histogram'
+                    }
+                ],
+                'layout': {
+                    'title': 'NYC 311 Calls category.',
+                    'height': 600,
+                    'padding': 150
                 }
+            }),
+            create_data_table(df)
             ],
-            'layout': {
-                'title': 'NYC 311 Calls category.',
-                'height': 600,
-                'padding': 150
-            }
-        }
-    ),
-        create_data_table(df)],
         id='dash-container'
-      )
+    )
 
     return dash_app.server
 
