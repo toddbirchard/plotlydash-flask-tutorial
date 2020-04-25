@@ -8,14 +8,14 @@ html {
 
 .dash-template {
   h1 {
-    margin: 0;
     display: inline-block;
+    margin: 0;
     font-size: 1.8em;
   }
 
   .logo {
-    margin-right: 20px;
     width: 40px;
+    margin-right: 20px;
   }
 
   .nav-wrapper a {
@@ -25,7 +25,7 @@ html {
 }
 
 #dash-container {
-  width: 1000px;
+  width: 1200px;
   max-width: 95%;
   margin: 50px auto 0;
 }
@@ -140,6 +140,7 @@ nav {
 
   td {
     padding: 15px !important;
+    font-size: .95em;
     text-align: left !important;
 
     &:first-of-type,
@@ -229,4 +230,21 @@ table {
   &::placeholder {
     color: grey;
   }
+}
+
+#histogram-graph {
+  margin-bottom: 30px;
+  padding-bottom: 50px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 0 4px #cdd3e2;
+}
+
+.main-svg {
+  overflow: visible !important;
+}
+
+header .nav-wrapper {
+      width: 1200px !important;
 }

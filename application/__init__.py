@@ -15,8 +15,8 @@ def create_app():
         app.register_blueprint(routes.main_bp)
 
         # Import Dash application
-        from application.dash_application.dash_example import Add_Dash
-        app = Add_Dash(app)
+        from application.plotlydash.dashboard import create_dashboard
+        app = create_dashboard(app)
 
         # Compile assets
         from application.assets import compile_assets

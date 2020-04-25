@@ -19,7 +19,6 @@ keywords = ["Flask",
 python = "^3.8"
 flask = "*"
 flask_assets = "*"
-pathlib = "*"
 dash = "*"
 dash_Table = "*"
 dash_core_components = "*"

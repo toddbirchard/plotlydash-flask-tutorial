@@ -14,7 +14,6 @@ html_layout = '''<!DOCTYPE html>
                                     <h1>Plotly Dash Flask Tutorial</h1>
                                   </a>
                                 <nav>
-                                  <a href="/dashapp/"><i class="fas fa-chart-line"></i> Embdedded Plotly Dash</a>
                                 </nav>
                             </div>
                             </header>

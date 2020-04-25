@@ -6,12 +6,10 @@ verify_ssl = true
 [dev-packages]
 lesscpy = "*"
 cssmin = "*"
-jsmin = "*"
 
 [packages]
 Flask = "*"
 Flask_assets = "*"
-Pathlib = "*"
 Dash = "*"
 Dash_Table = "*"
 Dash_core_components = "*"

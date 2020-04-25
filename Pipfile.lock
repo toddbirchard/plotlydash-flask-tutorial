@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e0224fe29ee796e09a00d39e8288b206763578718657456c88335b37275349e1"
+            "sha256": "d2517b51ae1b24f6a3be8404c5ae5fdda4b01ac6a6c9f0e7cc35047b60b130e4"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -186,13 +186,6 @@
             "index": "pypi",
             "version": "==1.0.3"
         },
-        "pathlib": {
-            "hashes": [
-                "sha256:6940718dfc3eff4258203ad5021090933e5c04707d5ca8cc9e73c94a7894ea9f"
-            ],
-            "index": "pypi",
-            "version": "==1.0.1"
-        },
         "plotly": {
             "hashes": [
                 "sha256:61f34955f04201a1ebcd59feaafa7eae7c16ef9b3f439870be01fb85a949292f",
@@ -257,13 +250,6 @@
             ],
             "index": "pypi",
             "version": "==0.2.0"
-        },
-        "jsmin": {
-            "hashes": [
-                "sha256:b6df99b2cd1c75d9d342e4335b535789b8da9107ec748212706ef7bbe5c2553b"
-            ],
-            "index": "pypi",
-            "version": "==2.2.2"
         },
         "lesscpy": {
             "hashes": [
