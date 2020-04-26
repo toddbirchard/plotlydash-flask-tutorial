@@ -9,4 +9,4 @@ def home():
     return render_template('index.jinja2',
                            title='Plotly Dash & Flask Tutorial',
                            template='home-template',
-                           body="This is an example homepage served with Flask.")
+                           body="This is a homepage served with Flask.")
