@@ -16,7 +16,8 @@ def create_app():
         app = create_dashboard(app)
 
         # Compile CSS
-        from application.assets import compile_assets
-        compile_assets(app)
+        if app.config['FLASK_ENV'] == 'development':
+            from application.assets import compile_assets
+            compile_assets(app)
 
         return app
