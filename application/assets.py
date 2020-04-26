@@ -2,7 +2,7 @@ from flask_assets import Environment, Bundle
 
 
 def compile_assets(app):
-    """Configure authorization asset bundles."""
+    """Compile stylesheets if `app` is running in development mode."""
     assets = Environment(app)
     Environment.auto_build = True
     Environment.debug = False

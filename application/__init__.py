@@ -1,24 +1,21 @@
-"""Initialize app."""
+"""Initialize Flask app."""
 from flask import Flask
 
 
 def create_app():
-    """Construct the core application."""
-    app = Flask(__name__,
-                instance_relative_config=False)
+    """Construct core Flask application with embedded Dash app."""
+    app = Flask(__name__, instance_relative_config=False)
     app.config.from_object('config.Config')
 
     with app.app_context():
-
-        # Import main Blueprint
+        # Import Flask routes
         from application import routes
-        app.register_blueprint(routes.main_bp)
 
         # Import Dash application
         from application.plotlydash.dashboard import create_dashboard
         app = create_dashboard(app)
 
-        # Compile assets
+        # Compile CSS
         from application.assets import compile_assets
         compile_assets(app)
 

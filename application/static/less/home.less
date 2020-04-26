@@ -1,21 +1,21 @@
 .home-template {
   .container {
-    width: 1000px;
-    margin: 50px auto;
+    margin: 0 !important;
   }
 
   .card {
-    width: 900px;
+    width: 800px;
     max-width: 93%;
     height: fit-content;
-    margin: 40px auto 0;
-    padding: 50px;
+    margin: 50px auto;
+    padding: 60px;
     background: white;
-    box-shadow: 0 0 5px rgba(65, 67, 144, 0.15);
+    box-shadow: 0 0 5px rgba(65,67,144,0.15);
     text-align: center;
     @media (max-width: 800px) {
+      max-width: 78%;
       width: unset;
-      padding: 40px 0;
+      padding: 40px;
     }
 
     .logo {
@@ -24,7 +24,7 @@
     }
 
     .site-title {
-      margin: 20px 0 3px;
+      margin: 10px 0 3px;
       color: #5f6988;
       font-family: proxima-nova, sans-serif;
       font-size: 2.3em;
@@ -50,6 +50,10 @@
       margin-top: 30px;
       font-size: 1.1em;
       font-weight: 600;
+
+      &:hover {
+        opacity: .7;
+      }
 
       i {
         margin-left: 6px;
