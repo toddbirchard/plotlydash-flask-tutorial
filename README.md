@@ -14,7 +14,9 @@
 
 ![Plot Dash Tutorial](https://storage.googleapis.com/hackersandslackers-cdn/2018/12/Dash@2x.jpg)
 
-Source code for the accompanying tutorial found here: https://hackersandslackers.com/plotly-dash-with-flask/
+Live demo: https://hackersandslackers.com/plotly-dash-with-flask/
+
+Tutorial: https://hackersandslackers.com/plotly-dash-with-flask/
 
 ## Getting Started
 
