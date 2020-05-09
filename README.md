@@ -18,9 +18,20 @@ Live demo: https://plotlydashflask.hackersandslackers.app/
 
 Tutorial: https://hackersandslackers.com/plotly-dash-with-flask/
 
-## Getting Started
+## Installation
 
-Installation is recommended with [Pipenv](https://pipenv-fork.readthedocs.io/en/latest/):
+**Installation via `requirements.txt`**:
+
+```shell
+$ git clone https://github.com/toddbirchard/plotlydash-flask-tutorial.git
+$ cd plotlydash-flask-tutorial
+$ python3 -m venv myenv
+$ source myenv/bin/activate
+$ pip3 install -r requirements.txt
+$ flask run
+```
+
+**Installation via [Pipenv](https://pipenv-fork.readthedocs.io/en/latest/)**:
 
 ```shell
 $ git clone https://github.com/toddbirchard/plotlydash-flask-tutorial.git
@@ -30,14 +41,6 @@ $ pipenv update
 $ flask run
 ```
 
-Alternatively, try installing via `requirements.txt`:
-
-```shell
-$ git clone https://github.com/toddbirchard/plotlydash-flask-tutorial.git
-$ cd plotlydash-flask-tutorial
-$ python3 -m pip install -r requirements.txt
-$ flask run
-```
 
 -----
 
