@@ -20,6 +20,7 @@ def create_dashboard(server):
 
     # Prepare a DataFrame
     df = pd.read_csv('data/311-calls.csv', parse_dates=['created_date'])
+    df['created_date'] = df['created_date'].dt.date
     num_complaints = df['complaint_type'].value_counts()
     to_remove = num_complaints[num_complaints <= 20].index
     df.replace(to_remove, np.nan, inplace=True)
@@ -43,7 +44,7 @@ def create_dashboard(server):
                 ],
                 'layout': {
                     'title': 'NYC 311 Calls category.',
-                    'height': 600,
+                    'height': 500,
                     'padding': 150
                 }
             }),
