@@ -12,12 +12,16 @@ def create_dashboard(server):
     """Create a Plotly Dash dashboard."""
     dash_app = dash.Dash(server=server,
                          routes_pathname_prefix='/dashapp/',
-                         external_stylesheets=['/static/dist/css/styles.css',
-                                               'https://fonts.googleapis.com/css?family=Lato']
+                         external_stylesheets=[
+                             '/static/dist/css/styles.css',
+                             'https://fonts.googleapis.com/css?family=Lato'
+                             ]
                          )
 
     # Prepare a DataFrame
     df = pd.read_csv('data/311-calls.csv', parse_dates=['created'])
+    df['created'] = df['created'].dt.date
+    df.drop(columns=['incident_zip'], inplace=True)
     num_complaints = df['complaint_type'].value_counts()
     to_remove = num_complaints[num_complaints <= 30].index
     df.replace(to_remove, np.nan, inplace=True)
@@ -41,12 +45,12 @@ def create_dashboard(server):
                 ],
                 'layout': {
                     'title': 'NYC 311 Calls category.',
-                    'height': 600,
+                    'height': 500,
                     'padding': 150
                 }
             }),
-            create_data_table(df)
-            ],
+                  create_data_table(df)
+                  ],
         id='dash-container'
     )
     return dash_app.server

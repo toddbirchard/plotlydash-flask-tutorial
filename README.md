@@ -12,13 +12,26 @@
 [![GitHub Stars](https://img.shields.io/github/stars/toddbirchard/plotlydash-flask-tutorial.svg?style=flat-square&colorB=ebcb8b&colorA=4c566a)](https://github.com/toddbirchard/plotlydash-flask-tutorial/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/toddbirchard/plotlydash-flask-tutorial.svg?style=flat-square&colorA=4c566a&colorB=ebcb8b)](https://github.com/toddbirchard/plotlydash-flask-tutorial/network)
 
-![Plot Dash Tutorial](https://storage.googleapis.com/hackersandslackers-cdn/2018/12/Dash@2x.jpg)
+![Plotly Dash Tutorial](https://storage.googleapis.com/hackersandslackers-cdn/2018/12/Dash@2x.jpg)
 
-Source code for the accompanying tutorial found here: https://hackersandslackers.com/plotly-dash-with-flask/
+Live demo: https://plotlydashflask.hackersandslackers.app/
 
-## Getting Started
+Tutorial: https://hackersandslackers.com/plotly-dash-with-flask/
 
-Installation is recommended with [Pipenv](https://pipenv-fork.readthedocs.io/en/latest/):
+## Installation
+
+**Installation via `requirements.txt`**:
+
+```shell
+$ git clone https://github.com/toddbirchard/plotlydash-flask-tutorial.git
+$ cd plotlydash-flask-tutorial
+$ python3 -m venv myenv
+$ source myenv/bin/activate
+$ pip3 install -r requirements.txt
+$ flask run
+```
+
+**Installation via [Pipenv](https://pipenv-fork.readthedocs.io/en/latest/)**:
 
 ```shell
 $ git clone https://github.com/toddbirchard/plotlydash-flask-tutorial.git
@@ -28,14 +41,6 @@ $ pipenv update
 $ flask run
 ```
 
-Alternatively, try installing via `requirements.txt`:
-
-```shell
-$ git clone https://github.com/toddbirchard/plotlydash-flask-tutorial.git
-$ cd plotlydash-flask-tutorial
-$ python3 -m pip install -r requirements.txt
-$ flask run
-```
 
 -----
 
