@@ -17,9 +17,9 @@ def create_dashboard(server):
                          )
 
     # Prepare a DataFrame
-    df = pd.read_csv('data/311-calls.csv', parse_dates=['created_date'])
+    df = pd.read_csv('data/311-calls.csv', parse_dates=['created'])
     num_complaints = df['complaint_type'].value_counts()
-    to_remove = num_complaints[num_complaints <= 20].index
+    to_remove = num_complaints[num_complaints <= 30].index
     df.replace(to_remove, np.nan, inplace=True)
 
     # Custom HTML layout
@@ -34,7 +34,7 @@ def create_dashboard(server):
                     {
                         'x': df['complaint_type'],
                         'text': df['complaint_type'],
-                        'customdata': df['unique_key'],
+                        'customdata': df['key'],
                         'name': '311 Calls by region.',
                         'type': 'histogram'
                     }

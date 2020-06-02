@@ -1,4 +1,4 @@
-unique_key,created_date,agency,agency_name,complaint_type,descriptor,incident_zip,city,latitude,longitude
+key,created,agency,agency_name,complaint_type,descriptor,incident_zip,city,latitude,longitude
 32482532,2016-01-22 16:51:00 UTC,DEP,Department of Environmental Protection,Water System,Dirty Water (WE),10033,NEW YORK,40.853573727207696,-73.935440041245968
 27774914,2014-04-03 16:37:44 UTC,DOF,Commercial Exemption Unit,DOF Property - Reduction Issue,Commercial Not For Profit Exemption,10454,BRONX,,
 32560159,2016-01-30 02:11:37 UTC,NYPD,New York City Police Department,Noise - Residential,Loud Music/Party,10009,NEW YORK,40.724664593196835,-73.980265406248037
