@@ -1,4 +1,4 @@
-"""Core Flask app routes."""
+"""Routes for parent Flask app."""
 from flask import render_template
 from flask import current_app as app
 

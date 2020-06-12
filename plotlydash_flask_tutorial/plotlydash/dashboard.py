@@ -10,13 +10,14 @@ from .layout import html_layout
 
 def create_dashboard(server):
     """Create a Plotly Dash dashboard."""
-    dash_app = dash.Dash(server=server,
-                         routes_pathname_prefix='/dashapp/',
-                         external_stylesheets=[
-                             '/static/dist/css/styles.css',
-                             'https://fonts.googleapis.com/css?family=Lato'
-                             ]
-                         )
+    dash_app = dash.Dash(
+        server=server,
+        routes_pathname_prefix='/dashapp/',
+        external_stylesheets=[
+            '/static/dist/css/styles.css',
+            'https://fonts.googleapis.com/css?family=Lato'
+        ]
+    )
 
     # Prepare a DataFrame
     df = pd.read_csv('data/311-calls.csv', parse_dates=['created'])

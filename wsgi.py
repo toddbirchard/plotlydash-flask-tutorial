@@ -1,5 +1,5 @@
 """Application entry point."""
-from application import create_app
+from plotlydash_flask_tutorial import create_app
 
 app = create_app()
 
