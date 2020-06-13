@@ -5,6 +5,7 @@ import dash
 import dash_table
 import dash_html_components as html
 import dash_core_components as dcc
+from .data import create_dataframe
 from .layout import html_layout
 
 
@@ -19,13 +20,8 @@ def create_dashboard(server):
         ]
     )
 
-    # Prepare a DataFrame
-    df = pd.read_csv('data/311-calls.csv', parse_dates=['created'])
-    df['created'] = df['created'].dt.date
-    df.drop(columns=['incident_zip'], inplace=True)
-    num_complaints = df['complaint_type'].value_counts()
-    to_remove = num_complaints[num_complaints <= 30].index
-    df.replace(to_remove, np.nan, inplace=True)
+    # Load DataFrame
+    df = create_dataframe()
 
     # Custom HTML layout
     dash_app.index_string = html_layout
@@ -35,23 +31,21 @@ def create_dashboard(server):
         children=[dcc.Graph(
             id='histogram-graph',
             figure={
-                'data': [
-                    {
-                        'x': df['complaint_type'],
-                        'text': df['complaint_type'],
-                        'customdata': df['key'],
-                        'name': '311 Calls by region.',
-                        'type': 'histogram'
-                    }
-                ],
+                'data': [{
+                    'x': df['complaint_type'],
+                    'text': df['complaint_type'],
+                    'customdata': df['key'],
+                    'name': '311 Calls by region.',
+                    'type': 'histogram'
+                }],
                 'layout': {
                     'title': 'NYC 311 Calls category.',
                     'height': 500,
                     'padding': 150
                 }
             }),
-                  create_data_table(df)
-                  ],
+            create_data_table(df)
+        ],
         id='dash-container'
     )
     return dash_app.server
@@ -68,3 +62,4 @@ def create_data_table(df):
         page_size=300
     )
     return table
+
