@@ -1,7 +1,7 @@
 attrs==19.3.0
 Brotli==1.0.7
 click==7.1.2
-dash==1.12.0
+dash==1.13.4
 dash-core-components==1.10.0
 dash-html-components==1.0.3
 dash-renderer==1.4.1
