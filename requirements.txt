@@ -17,7 +17,7 @@ more-itertools==8.3.0
 numpy==1.18.5
 packaging==20.4
 pandas==1.0.4
-plotly==4.8.1
+plotly==4.8.2
 pluggy==0.13.1
 py==1.8.1
 pyparsing==2.4.7
