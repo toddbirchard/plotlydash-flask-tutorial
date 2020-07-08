@@ -9,11 +9,13 @@ readme = "README.md"
 homepage = "https://hackersandslackers.com/plotly-dash-with-flask/"
 repository = "https://github.com/toddbirchard/plotlydash-flask-tutorial/"
 documentation = "https://hackersandslackers.com/plotly-dash-with-flask/"
-keywords = ["Flask",
-            "Plotly",
-            "Plotly Dash",
-            "Data Science",
-            "Tutorial"]
+keywords = [
+    "Flask",
+    "Plotly",
+    "Plotly Dash",
+    "Data Science",
+    "Tutorial"
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
