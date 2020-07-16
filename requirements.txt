@@ -14,7 +14,7 @@ Jinja2==2.11.2
 MarkupSafe==1.1.1
 numpy==1.19.0
 pandas==1.0.5
-plotly==4.8.2
+plotly==4.9.0
 python-dateutil==2.8.1
 python-dotenv==0.14.0
 pytz==2020.1
