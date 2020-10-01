@@ -17,7 +17,7 @@ MarkupSafe==1.1.1
 numpy==1.19.1
 pandas==1.1.1
 pathlib==1.0.1
-plotly==4.9.0
+plotly==4.11.0
 ply==3.11
 python-dateutil==2.8.1
 python-dotenv==0.14.0
