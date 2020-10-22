@@ -1,6 +1,5 @@
 # Plotly Dash Flask Tutorial
 
-
 ![Python](https://img.shields.io/badge/Python-^3.8-blue.svg?logo=python&longCache=true&logoColor=white&colorB=5e81ac&style=flat-square&colorA=4c566a)
 ![Flask](https://img.shields.io/badge/Flask-1.1.2-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
 ![Flask-Assets](https://img.shields.io/badge/Flask--Assets-v2.0-blue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
@@ -16,56 +15,37 @@
 
 Make Plotly Dash part of your Flask Application by following this example.
 
-* The full tutorial can be found here: https://hackersandslackers.com/plotly-dash-with-flask/
-* A live demo can be found here: https://plotlydashflask.hackersandslackers.app/
+* **Tutorial**: https://hackersandslackers.com/plotly-dash-with-flask/
+* **Demo**: https://plotlydashflask.hackersandslackers.app/
 
-## Installation
+# Getting Started
 
-**Installation via `requirements.txt`**:
+Get set up locally in two steps:
 
-```shell
-$ git clone https://github.com/toddbirchard/plotlydash-flask-tutorial.git
-$ cd plotlydash-flask-tutorial
-$ python3 -m venv myenv
-$ source myenv/bin/activate
-$ pip3 install -r requirements.txt
-$ flask run
-```
+### Environment Variables
 
-**Installation via [Pipenv](https://pipenv-fork.readthedocs.io/en/latest/)**:
+Replace the values in **.env.example** with your values and rename this file to **.env**:
 
-```shell
-$ git clone https://github.com/toddbirchard/plotlydash-flask-tutorial.git
-$ cd plotlydash-flask-tutorial
-$ pipenv shell
-$ pipenv update
-$ flask run
-```
+* `FLASK_APP`: Entry point of your application; should be `wsgi.py`.
+* `FLASK_ENV`: The environment in which to run your application; either `development` or `production`.
+* `SECRET_KEY`: Randomly generated string of characters used to encrypt your app's data.
+* `LESS_BIN` *(optional for static assets)*: Path to your local LESS installation via `which lessc`.
+* `ASSETS_DEBUG` *(optional)*: Debug asset creation and bundling in `development`.
+* `LESS_RUN_IN_DEBUG` *(optional)*: Debug LESS while in `development`.
+* `COMPRESSOR_DEBUG` *(optional)*: Debug asset compression while in `development`.
 
-**Installation via [Poetry](https://python-poetry.org/)**:
+
+*Remember never to commit secrets saved in .env files to Github.*
+
+### Installation
+
+Get up and running with `make deploy`:
 
 ```shell
 $ git clone https://github.com/hackersandslackers/plotlydash-flask-tutorial.git
 $ cd plotlydash-flask-tutorial
-$ poetry shell
-$ poetry update
-$ poetry run
-```
-
-## Usage
-
-Replace the values in **.env.example** with your values and rename this file to **.env**:
-
-* `FLASK_APP`: Entry point of your application (should be `wsgi.py`).
-* `FLASK_ENV`: The environment to run your app in (either `development` or `production`).
-* `SECRET_KEY`: Randomly generated string of characters used to encrypt your app's data.
-* `LESS_BIN`: Path to your local LESS installation via `which lessc` (optional for static assets).
-* `ASSETS_DEBUG`: Debug asset creation and bundling in `development` (optional).
-* `LESS_RUN_IN_DEBUG`: Debug LESS while in `development` (optional).
-* `COMPRESSOR_DEBUG`: Debug asset compression while in `development` (optional).
-
-
-*Remember never to commit secrets saved in .env files to Github.*
+$ make deploy
+``` 
 
 -----
 

@@ -1,42 +1,58 @@
 SRCPATH := $(CURDIR)
-ENTRYPOINT := $(shell find $(SRCPATH) -name '*.ini')
-PROJECTNAME := $(shell basename "$PWD")
+PROJECTNAME := $(shell basename $(CURDIR))
 
 define HELP
-Manage $(PROJECTNAME).
+Manage $(PROJECTNAME). Usage:
 
-Usage:
-
-make run             - Run uWSGI server for $(PROJECTNAME).
-make restart         - Purge cache & reinstall modules.
-make update          - Update npm production dependencies.
-make clean           - Remove cached files.
+make run        - Run $(PROJECTNAME).
+make deploy     - Install requirements and run app for the first time.
+make update     - Update pip dependencies via Python Poetry.
+make format     - Format code with Python's `Black` library.
+make clean      - Remove cached files and lock files.
 endef
 export HELP
 
-.PHONY: run restart update help
+.PHONY: run restart deploy update clean help
+
+
+requirements: .requirements.txt
+
+
+.requirements.txt: requirements.txt
+	$(shell . .venv/bin/activate && pip install -r requirements.txt)
+
 
 all help:
 	@echo "$$HELP"
 
+
 .PHONY: run
 run:
-	nohup uwsgi $(ENTRYPOINT) &
+	$(shell . .venv/bin/activate && python3 wsgi.py)
 
-.PHONY: restart
-restart:
-	pkill -9 -f $(shell uwsgi $(ENTRYPOINT))
-	nohup uwsgi $(ENTRYPOINT) &
+
+.PHONY: deploy
+deploy:
+	$(shell . ./deploy.sh)
+
 
 .PHONY: update
 update:
-	git pull origin master
-	pkill -9 -f $(shell uwsgi $(ENTRYPOINT))
-	poetry shell
-	poetry update
-	nohup uwsgi $(ENTRYPOINT) &
+	poetry shell && poetry update
+	pip freeze > requirements.txt
+	exit
+
+
+.PHONY: format
+format: requirements
+	$(shell . .venv/bin/activate)
+	$(shell isort -rc ./)
+	$(shell black ./)
+
 
 .PHONY: clean
 clean:
 	find . -name '*.pyc' -delete
 	find . -name '__pycache__' -delete
+	find . -name 'poetry.lock' -delete
+	find . -name 'Pipefile.lock' -delete
