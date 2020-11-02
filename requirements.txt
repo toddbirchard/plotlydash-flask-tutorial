@@ -20,7 +20,7 @@ Jinja2==2.11.2
 lesscpy==0.14.0
 MarkupSafe==1.1.1
 mypy-extensions==0.4.3
-numpy==1.19.2
+numpy==1.19.4
 packaging==20.4
 pandas==1.1.3
 pathlib==1.0.1
