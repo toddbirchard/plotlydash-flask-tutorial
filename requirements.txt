@@ -1,5 +1,5 @@
 appdirs==1.4.4
-attrs==20.2.0
+attrs==20.3.0
 black==20.8b1
 Brotli==1.0.9
 click==7.1.2
