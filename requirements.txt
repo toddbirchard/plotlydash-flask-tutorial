@@ -30,7 +30,7 @@ pluggy==0.13.1
 ply==3.11
 py==1.9.0
 pyparsing==2.4.7
-pytest==6.1.1
+pytest==6.1.2
 python-dateutil==2.8.1
 python-dotenv==0.14.0
 pytz==2020.1
