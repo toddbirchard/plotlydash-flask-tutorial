@@ -28,22 +28,8 @@ def init_dashboard(server):
 
     # Create Layout
     dash_app.layout = html.Div(
-        children=[dcc.Graph(
-            id='histogram-graph',
-            figure={
-                'data': [{
-                    'x': df['complaint_type'],
-                    'text': df['complaint_type'],
-                    'customdata': df['key'],
-                    'name': '311 Calls by region.',
-                    'type': 'histogram'
-                }],
-                'layout': {
-                    'title': 'NYC 311 Calls category.',
-                    'height': 500,
-                    'padding': 150
-                }
-            }),
+        children=[
+            create_graph(df),
             create_data_table(df)
         ],
         id='dash-container'
@@ -63,3 +49,22 @@ def create_data_table(df):
     )
     return table
 
+
+def create_graph(df):
+    agraph = dcc.Graph(
+        id='histogram-graph',
+        figure={
+            'data': [{
+                'x': df['complaint_type'],
+                'text': df['complaint_type'],
+                'customdata': df['key'],
+                'name': '311 Calls by region.',
+                'type': 'histogram'
+            }],
+            'layout': {
+                'title': 'NYC 311 Calls category.',
+                'height': 500,
+                'padding': 150
+            }
+    })
+    return agraph
