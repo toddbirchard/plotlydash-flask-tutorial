@@ -21,7 +21,7 @@ lesscpy==0.14.0
 MarkupSafe==1.1.1
 mypy-extensions==0.4.3
 numpy==1.19.2
-packaging==20.4
+packaging==20.7
 pandas==1.1.4
 pathlib==1.0.1
 pathspec==0.8.0
