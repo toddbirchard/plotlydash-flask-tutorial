@@ -1,6 +1,6 @@
 """Plotly Dash HTML layout override."""
 
-html_layout = '''
+html_layout = """
 <!DOCTYPE html>
     <html>
         <head>
@@ -28,4 +28,4 @@ html_layout = '''
             </footer>
         </body>
     </html>
-'''
+"""

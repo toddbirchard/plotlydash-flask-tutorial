@@ -12,10 +12,11 @@ make clean      - Remove cached files and lock files.
 endef
 export HELP
 
-.PHONY: run restart deploy update clean help
+.PHONY: run deploy update format clean help
 
 
 requirements: .requirements.txt
+env: .venv/bin/activate
 
 
 .requirements.txt: requirements.txt
@@ -27,8 +28,8 @@ all help:
 
 
 .PHONY: run
-run:
-	$(shell . .venv/bin/activate && python3 wsgi.py)
+run: env
+	$(shell . .venv/bin/activate && flask run)
 
 
 .PHONY: deploy
@@ -37,17 +38,16 @@ deploy:
 
 
 .PHONY: update
-update:
-	poetry shell && poetry update
-	pip freeze > requirements.txt
-	exit
+update: env
+	.venv/bin/python3 -m pip install -U pip
+	poetry update
+	poetry export -f requirements.txt --output requirements.txt --without-hashes
 
 
 .PHONY: format
-format: requirements
-	$(shell . .venv/bin/activate)
-	$(shell isort -rc ./)
-	$(shell black ./)
+format: env
+	$(shell . .venv/bin/activate && isort -rc ./)
+	$(shell . .venv/bin/activate && black ./)
 
 
 .PHONY: clean
