@@ -46,7 +46,7 @@ update: env
 
 .PHONY: format
 format: env
-	$(shell . .venv/bin/activate && isort -rc ./)
+	$(shell . .venv/bin/activate && isort ./)
 	$(shell . .venv/bin/activate && black ./)
 
 
