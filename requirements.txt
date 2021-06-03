@@ -1,6 +1,6 @@
 brotli==1.0.9; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.3.0"
 click==7.1.2; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-dash-core-components==1.14.0
+dash-core-components==1.15.0
 dash-renderer==1.9.0
 dash-html-components==1.1.2
 dash-table==4.11.2
