@@ -11,7 +11,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/toddbirchard/plotlydash-flask-tutorial.svg?style=flat-square&colorB=ebcb8b&colorA=4c566a)](https://github.com/toddbirchard/plotlydash-flask-tutorial/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/toddbirchard/plotlydash-flask-tutorial.svg?style=flat-square&colorA=4c566a&colorB=ebcb8b)](https://github.com/toddbirchard/plotlydash-flask-tutorial/network)
 
-![Plotly Dash Tutorial](https://storage.googleapis.com/hackersandslackers-cdn/2018/12/Dash@2x.jpg)
+![Plotly Dash Tutorial](./.github/dash@2x.jpg?raw=true)
 
 Make Plotly Dash part of your Flask Application by following this example.
 
