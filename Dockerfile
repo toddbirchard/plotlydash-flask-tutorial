@@ -1,9 +1,11 @@
+# syntax=docker/dockerfile:1
 FROM python:3.8
-
-WORKDIR /usr/src/app
-
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+WORKDIR /code
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+COPY requirements.txt requirements.txt
+RUN pip install -r --no-cache requirements.txt
+EXPOSE 3000
 COPY . .
-VOLUME ["/usr/src/app"]
 CMD [ "python", "./wsgi.py" ]
+
