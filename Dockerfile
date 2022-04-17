@@ -4,7 +4,7 @@ WORKDIR /code
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 COPY requirements.txt requirements.txt
-RUN pip install -r --no-cache requirements.txt
+RUN pip install -r requirements.txt
 EXPOSE 3000
 COPY . .
 CMD [ "python", "./wsgi.py" ]
