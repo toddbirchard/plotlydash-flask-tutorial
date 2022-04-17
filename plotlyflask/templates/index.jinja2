@@ -1,0 +1,13 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+<div class="card">
+  <img src="{{ url_for('static', filename='img/logo.png') }}" class="logo" />
+  <h1 class="site-title">{{ title }}</h1>
+  <p class="subtitle">Demo for embedding Dash within Flask Apps (View source on <a href="https://github.com/chigwell/dash-flask">Github</a>).</p>
+  <a href="/dashapp/" class="dash-link">
+    <span>Embdedded Dash</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+</div>
+{% endblock %}

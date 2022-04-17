@@ -1,0 +1,256 @@
+body,
+html {
+  height: 100% !important;
+  padding: 0;
+  background: #e7ecf7 !important;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+.dash-template {
+  h1 {
+    display: inline-block;
+    margin: 0;
+    font-size: 1.5em;
+  }
+
+  .logo {
+    width: 40px;
+    margin-right: 20px;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .nav-wrapper a {
+    display: flex;
+    align-items: center;
+  }
+}
+
+#dash-container {
+  width: 1200px;
+  max-width: 95%;
+  margin: 50px auto 0;
+}
+
+.container {
+  margin: 90px 30px;
+  color: #182635;
+}
+
+#_dash-app-content {
+  max-width: 95% !important;
+  margin: 90px auto !important;
+  overflow: hidden;
+}
+
+nav {
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #59657b;
+    line-height: 1;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+    i {
+      margin-right: 5px;
+    }
+  }
+}
+
+.dash-spreadsheet-container {
+  max-width: 100%;
+  margin: 0 auto 20px !important;
+  overflow: hidden;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 4px #cdd3e2;
+  font-family: 'Lato', sans-serif;
+
+  * {
+    box-shadow: none !important;
+    font-family: Lato, sans-serif;
+  }
+
+  th,
+  tr {
+    box-shadow: none !important;
+  }
+
+  td:first-of-type,
+  tr:first-of-type {
+    width: 55px;
+  }
+
+  td:last-of-type,
+  tr:last-of-type {
+    width: 100px;
+  }
+
+  th {
+    padding: 25px 12px !important;
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    border-left: 0 !important;
+    background: white !important;
+    color: #404552;
+
+    .column-header--sort {
+      margin-right: 7px;
+      transition: all 0.2s ease-out;
+
+      &:hover {
+        color: #9bd2eb !important;
+      }
+
+      svg {
+        width: 0.5em;
+      }
+    }
+
+    .sort {
+      order: 2;
+      color: #aeaeae !important;
+      transition: all 0.3s ease-out;
+
+      &:hover {
+        text-decoration: none;
+        cursor: pointer;
+        opacity: 0.7;
+      }
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+
+      span:last-of-type {
+        font-size: 0.8em;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  td {
+    padding: 12px !important;
+    font-size: .95em;
+    text-align: left !important;
+
+    &:first-of-type,
+    &:last-of-type {
+      max-width: 50px !important;
+    }
+
+    .dash-cell-value {
+      display: block !important;
+      max-width: 500px;
+      overflow: hidden !important;
+      font-size: 1.2em;
+      font-weight: 300;
+      text-align: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      opacity: .8;
+    }
+  }
+
+  td[data-dash-column="command"],
+  .column-1 {
+    max-width: 200px !important;
+  }
+
+  td[data-dash-column="index"] {
+    text-align: center !important;
+
+    div {
+      text-align: center !important;
+    }
+  }
+
+  td[data-dash-column="index"] {
+    color: #939da4;
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+
+  tr:nth-child(even) {
+    background: #f5f8fc !important;
+  }
+}
+
+table {
+  tbody {
+    box-shadow: 0 0 7px #bdbdd2 !important;
+
+    tr {
+      border: 0 !important;
+
+      &:nth-child(even) {
+        background: #e7eefa !important;
+      }
+
+      td {
+        padding: 12px 10px !important;
+        overflow: hidden !important;
+        border: 0 !important;
+        font-size: 0.65em !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+    }
+  }
+}
+
+.dash-spreadsheet-container .dash-spreadsheet-inner td.focused {
+  background-color: rgba(154, 212, 255, 0.2) !important;
+  box-shadow: 0 0 4px #cdd3e2;
+}
+
+.dash-spreadsheet-container .dash-spreadsheet-inner td .input-cell-value-shadow {
+  width: 100%;
+}
+
+.dash-spreadsheet-container .dash-spreadsheet-inner td input.dash-cell-value.unfocused {
+  caret-color: #317ed1 !important;
+}
+
+.dash-spreadsheet-inner .input-active {
+  overflow: visible !important;
+  color: #829ab2;
+  text-align: left !important;
+}
+
+.dash-spreadsheet-inner input {
+  &::placeholder {
+    color: grey;
+  }
+}
+
+#histogram-graph {
+  margin-bottom: 30px;
+  padding-bottom: 176px !important;
+  overflow: hidden;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 0 4px #cdd3e2;
+}
+
+.main-svg {
+  overflow: visible !important;
+}
+
+header .nav-wrapper {
+  width: 1200px !important;
+}
