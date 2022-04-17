@@ -2,8 +2,6 @@
 
 Make Plotly Dash part of your Flask Application by following this example.
 
-* **Demo**: https://plotlydashflask.hackersandslackers.app/
-
 # Getting Started
 
 Get set up locally in two steps:
