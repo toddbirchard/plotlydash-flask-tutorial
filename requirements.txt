@@ -28,3 +28,4 @@ tenacity==6.2.0; python_version >= "2.7" and python_full_version < "3.0.0" or py
 uwsgi==2.0.20
 webassets==2.0
 werkzeug==1.0.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
+geojson==2.5.0
