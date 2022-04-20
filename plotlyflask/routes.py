@@ -19,6 +19,12 @@ def home():
 def uploader():
     # TODO: check the uploaded file by the security
     f = request.files['file']
-    file_name = f.filename
     f.save('data/input.csv')
+    return redirect("/dashapp/", code=200)
+
+
+# the mockup of results
+
+@app.route("/api/winner", methods=['GET'])
+def get_winner():
     return redirect("/dashapp/", code=200)
