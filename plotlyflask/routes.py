@@ -1,4 +1,6 @@
 """Routes for parent Flask app."""
+import json
+import pandas as pd
 from flask import current_app as app
 from flask import render_template, jsonify, make_response, redirect, request
 
@@ -27,4 +29,10 @@ def uploader():
 
 @app.route("/api/winner", methods=['GET'])
 def get_winner():
-    return redirect("/dashapp/", code=200)
+    winner = pd.read_csv("data/winner.csv", sep=';')
+    data = {
+        'message': 'The winner is...',
+        'status': 200,
+        'data': json.loads(winner.to_json())
+    }
+    return make_response(jsonify(data))

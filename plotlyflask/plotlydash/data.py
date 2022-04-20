@@ -168,6 +168,15 @@ def create_dataframe(input_file_name):
     df_total = df_total_votes.groupby(['party_code', 'party_name'], as_index=False)['party_votes'].sum()
     df_total = df_total.sort_values(by=['party_votes'], ascending=False)
     winner_row = df_total.iloc[0]
+    party_votes = (winner_row['party_votes'] / total_votes)
+    print('party_votes')
+    print(party_votes)
+    file_name = "data/winner.csv"
+    erase_file(file_name)
+    with open(file_name, 'w+') as f:
+        f.write('winner_party_code;winner_party_name;winner_votes;winner_percentage')
+        f.write("\n")
+        f.write(winner_row['party_code']+';'+winner_row['party_name']+';'+str(winner_row['party_votes'])+';'+str(party_votes))
 
     df_constituencies = df_total_votes[df_total_votes["is_winner"] == True]
     df_constituencies.rename(columns={'party_code': 'party_winner_code'}, inplace=True)
