@@ -36,9 +36,10 @@
 </head>
 
 <body class="{{template}}">
-  <div class="container">
+  <main class="container">
 	  {% block content %}{% endblock %}
-  </div>
+  </main>
+
   {% include 'analytics.jinja2' %}
 </body>
 

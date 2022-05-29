@@ -1,10 +1,8 @@
 """Instantiate a Dash app."""
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
-import dash_table
-import numpy as np
-import pandas as pd
+from dash import dash_table
+from dash import dcc
+from dash import html
 
 from .data import create_dataframe
 from .layout import html_layout
