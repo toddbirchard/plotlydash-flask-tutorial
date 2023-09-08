@@ -1,17 +1,22 @@
 """Instantiate a Dash app."""
 import dash
-from dash import dash_table
-from dash import dcc
-from dash import html
+from dash import dcc, html
+from dash.dash_table import DataTable
+from flask import Flask
+from pandas import DataFrame
 
 from .data import create_dataframe
 from .layout import html_layout
 
 
-def init_dashboard(server):
-    """Create a Plotly Dash dashboard."""
-    dash_app = dash.Dash(
-        server=server,
+def init_dashboard(app: Flask):
+    """
+    Create a Plotly Dash dashboard within a running Flask app.
+
+    :param Flask app: Top-level Flask application.
+    """
+    dash_module = dash.Dash(
+        server=app,
         routes_pathname_prefix="/dashapp/",
         external_stylesheets=[
             "/static/dist/css/styles.css",
@@ -23,10 +28,10 @@ def init_dashboard(server):
     df = create_dataframe()
 
     # Custom HTML layout
-    dash_app.index_string = html_layout
+    dash_module.index_string = html_layout
 
     # Create Layout
-    dash_app.layout = html.Div(
+    dash_module.layout = html.Div(
         children=[
             dcc.Graph(
                 id="histogram-graph",
@@ -51,12 +56,18 @@ def init_dashboard(server):
         ],
         id="dash-container",
     )
-    return dash_app.server
+    return dash_module.server
 
 
-def create_data_table(df):
-    """Create Dash datatable from Pandas DataFrame."""
-    table = dash_table.DataTable(
+def create_data_table(df: DataFrame) -> DataTable:
+    """
+    Create Dash DataTable object from Pandas DataFrame.
+
+    :param DataFrame df: Pandas DataFrame from which to build a Dash table.
+
+    :returns: DataTable
+    """
+    table = DataTable(
         id="database-table",
         columns=[{"name": i, "id": i} for i in df.columns],
         data=df.to_dict("records"),

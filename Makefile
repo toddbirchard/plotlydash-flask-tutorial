@@ -1,6 +1,6 @@
 PROJECT_NAME := $(shell basename $CURDIR)
-VIRTUAL_ENVIRONMENT := $(CURDIR)/.venv
-LOCAL_PYTHON := $(VIRTUAL_ENVIRONMENT)/bin/python3
+VIRTUAL_ENV := $(CURDIR)/.venv
+LOCAL_PYTHON := $(VIRTUAL_ENV)/bin/python3
 
 define HELP
 Manage $(PROJECT_NAME). Usage:
@@ -19,63 +19,52 @@ export HELP
 
 .PHONY: run install deploy update format lint clean help
 
-
 all help:
 	@echo "$$HELP"
 
+env: $(VIRTUAL_ENV)
 
-env: $(VIRTUAL_ENVIRONMENT)
-
-
-$(VIRTUAL_ENVIRONMENT):
-	if [ -d $(VIRTUAL_ENVIRONMENT) ]; then \
-		@echo "Creating Python virtual environment..." && \
-		python3 -m venv $(VIRTUAL_ENVIRONMENT) && \
+$(VIRTUAL_ENV):
+	if [ ! -d $(VIRTUAL_ENV) ]; then \
+		echo "Creating Python virtual env in \`${VIRTUAL_ENV}\`"; \
+		python3 -m venv $(VIRTUAL_ENV); \
 	fi
-
 
 .PHONY: run
 run: env
-	$(shell python3 -m wsgi.py)
-
+	$(LOCAL_PYTHON) -m main
 
 .PHONY: install
-install:
-	if [ ! -d "./.venv" ]; then python3 -m venv $(VIRTUAL_ENVIRONMENT); fi
-	$(shell . .venv/bin/activate)
-	$(LOCAL_PYTHON) -m pip install --upgrade pip setuptools wheel
-	$(LOCAL_PYTHON) -m pip install -r requirements.txt
-
+install: env
+	$(LOCAL_PYTHON) -m pip install --upgrade pip setuptools wheel && \
+	$(LOCAL_PYTHON) -m pip install -r requirements.txt && \
+	npm i -g less && \
+	echo Installed dependencies in \`${VIRTUAL_ENV}\`;
 
 .PHONY: deploy
 deploy:
-	make clean
-	make install
+	make install && \
 	make run
-
 
 .PHONY: test
 test: env
 	$(LOCAL_PYTHON) -m \
-		coverage run -m pytest -v \
-		--disable-pytest-warnings \
-		&& coverage html --title='Coverage Report' -d .reports \
-		&& open .reports/index.html
-
+		coverage run -m pytest -vv \
+		--disable-pytest-warnings && \
+		coverage html --title='Coverage Report' -d .reports && \
+		open .reports/index.html
 
 .PHONY: update
-update:
-	if [ ! -d "./.venv" ]; then python3 -m venv $(VIRTUAL_ENVIRONMENT); fi
-	$(LOCAL_PYTHON) -m pip install --upgrade pip setuptools wheel
-	poetry update
-	poetry export -f requirements.txt --output requirements.txt --without-hashes
-
+update: env
+	$(LOCAL_PYTHON) -m pip install --upgrade pip setuptools wheel && \
+	poetry update && \
+	poetry export -f requirements.txt --output requirements.txt --without-hashes && \
+	echo Installed dependencies in \`${VIRTUAL_ENV}\`;
 
 .PHONY: format
 format: env
-	isort --multi-line=3 .
-	black .
-
+	$(LOCAL_PYTHON) -m isort --multi-line=3 . && \
+	$(LOCAL_PYTHON) -m black .
 
 .PHONY: lint
 lint: env
@@ -85,19 +74,20 @@ lint: env
 			--show-source \
 			--statistics
 
-
 .PHONY: clean
 clean:
-	find . -name '*.pyc' -delete
-	find . -name '__pycache__' -delete
-	find . -name 'poetry.lock' -delete
-	find . -name 'Pipefile.lock' -delete
-	find . -name '*.log' -delete
-	find . -name '.coverage' -delete
-	find . -wholename 'logs/*.json' -delete
-	find . -wholename '*/.pytest_cache' -delete
-	find . -wholename '**/.pytest_cache' -delete
-	find . -wholename './logs/*.json' -delete
-	find . -wholename '.webassets-cache/*' -delete
-	find . -wholename './logs' -delete
-	find . -wholename './.reports' -delete
+	find . -name '.coverage' -delete && \
+	find . -name '*.pyc' -delete \
+	find . -name '__pycache__' -delete \
+	find . -name 'poetry.lock' -delete \
+	find . -name '*.log' -delete \
+	find . -name '.DS_Store' -delete \
+	find . -wholename '**/*.pyc' -delete && \
+	find . -wholename '**/*.html' -delete && \
+	find . -type d -wholename '__pycache__' -exec rm -rf {} + && \
+	find . -type d -wholename '.venv' -exec rm -rf {} + && \
+	find . -type d -wholename '.pytest_cache' -exec rm -rf {} + && \
+	find . -type d -wholename '**/.pytest_cache' -exec rm -rf {} + && \
+	find . -type d -wholename '**/*.log' -exec rm -rf {} + && \
+	find . -type d -wholename './.reports/*' -exec rm -rf {} + && \
+	find . -type d -wholename '**/.webassets-cache' -exec rm -rf {} +

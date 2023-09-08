@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "plotlydash_flask_tutorial"
-version = "0.1.0"
+version = "0.1.1"
 description = "Integrate Plotly Dash into your Flask applications."
 authors = ["Todd Birchard <toddbirchard@gmail.com>"]
 maintainers = ["Todd Birchard <toddbirchard@gmail.com>"]
@@ -9,16 +9,10 @@ readme = "README.md"
 homepage = "https://hackersandslackers.com/plotly-dash-with-flask/"
 repository = "https://github.com/toddbirchard/plotlydash-flask-tutorial/"
 documentation = "https://hackersandslackers.com/plotly-dash-with-flask/"
-keywords = [
-    "Flask",
-    "Plotly",
-    "Plotly Dash",
-    "Data Science",
-    "Tutorial"
-]
+keywords = ["Flask", "Plotly", "Plotly Dash", "Data Science", "Tutorial"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.10,<4.0"
 flask = "*"
 flask_assets = "*"
 dash = "*"
@@ -27,10 +21,7 @@ dash_core_components = "*"
 dash_html_components = "*"
 dash-renderer = "*"
 pandas = "*"
-python-dotenv = "*"
 uWSGI = "*"
-
-[tool.poetry.dev-dependencies]
 pytest = "*"
 coverage = "*"
 mypy = "*"
@@ -38,16 +29,20 @@ flake8 = "*"
 pylint = "*"
 black = "*"
 isort = "*"
+python-dotenv = "^1.0.0"
+cssmin = "^0.2.0"
+lesscpy = "^0.15.1"
+jsmin = "^3.0.1"
 
 [tool.poetry.scripts]
-run = "wsgi:app"
+run = "main:app"
 
 [tool.poetry.urls]
 issues = "https://github.com/toddbirchard/plotlydash-flask-tutorial/issues"
 
 [build-system]
-requires = ["poetry>=1.1.13"]
+requires = ["poetry>=1.5.1"]
 build-backend = "poetry.masonry.api"
 
 [tool.pylint.'MESSAGES CONTROL']
-disable="C0103,C0301,W0703,W0621"
+disable = "C0103,C0301,W0703,W0621"
